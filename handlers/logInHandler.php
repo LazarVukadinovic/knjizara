@@ -1,4 +1,5 @@
 <?php
+    session_start();
     include "../database/connection.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -25,7 +26,7 @@
     }
 
     /*
-        *upis u bazu
+        *citanje iz baze
     */
     if(!empty($_SESSION["user"]) && !empty($userPassword))
     {
@@ -37,7 +38,7 @@
         if ($result->num_rows > 0) {
             if($row["korisnicko_ime"] == $_SESSION["user"] && password_verify($userPassword, $row["lozinka"]))
             {
-                header("location:/index.php"); 
+                header('Location: http://nemanaziv.com');
             }
         }
         else
@@ -53,5 +54,5 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-
+    header('Location: http://nemanaziv.com/pages/logIN.php');
 ?>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
   <div class="container">
-    <a class="navbar-brand" href="./index.php">Knjizara</a>
+    <a class="navbar-brand" href="http://nemanaziv.com">Knjizara</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,16 +12,15 @@
           </a>
           <ul class="dropdown-menu">
             <?php
-              if(isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == 1)
+              if(isset($_SESSION["user"]))
               {
-                echo '<li><a class="dropdown-item" href="../account.php">Nalog</a></li>';
-                echo '<li><a class="dropdown-item" href="../handling/logout.php">Odjava</a></li>';
-                $_SESSION["currentURL"] = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                //echo '<li><a class="dropdown-item" href="http://nemanaziv.com/account.php">Nalog</a></li>';
+                echo '<li><a class="dropdown-item" href="http://nemanaziv.com/handlers/logout.php">Odjava</a></li>';
               }
               else
               {
-                echo '<li><a class="dropdown-item" href="./pages/logIN.php">Prijavi se</a></li>';
-                echo '<li><a class="dropdown-item" href="./pages/signUP.php">Registruj se</a></li>';
+                echo '<li><a class="dropdown-item" href="http://nemanaziv.com/pages/logIN.php">Prijavi se</a></li>';
+                echo '<li><a class="dropdown-item" href="http://nemanaziv.com/pages/signUP.php">Registruj se</a></li>';
               }
             ?>
           </ul>

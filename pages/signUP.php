@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if(isset($_SESSION["user"]) && !empty($_SESSION["user"]))
+    {
+        header('Location: http://nemanaziv.com');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -54,31 +58,6 @@
             </div>
             </div>
         </div>
-        <?php 
-            if(!empty($_SESSION["user"]) && !empty($_SESSION["userPassword"]) && !empty($rpassword) && ($_SESSION["userPassword"] == $rpassword) && !empty($ime) && !empty($prezime))
-            {
-                $user = $_SESSION["user"];
-                $password = $_SESSION["userPassword"];
-                $sqlCheck = "SELECT korisnicko_ime FROM korisnik WHERE korisnicko_ime = '" . $user . "'";
-                $resultCheck = $conn->query($sqlCheck);
-                if($resultCheck->num_rows > 0)
-                {
-                    $_SESSION["loggedIn"] = 0;
-                    $_SESSION["user"] = "";
-                    $_SESSION["userPassword"] = "";
-                    echo "<script>alert('Nalog vec postoji');</script>";
-                }
-                else
-                {
-                    echo "ulaz";
-                    $sqlInsert = 'INSERT INTO korisnik (korisnicko_ime, lozinka, ime, prezime, slika)
-                    VALUES("' . $user . '", "' . password_hash($password, PASSWORD_BCRYPT) . '", "' . $ime . '", "' . $prezime .'", "avatar.png" )';
-                    $conn->query($sqlInsert);
-                    $_SESSION["loggedIn"] = 1;
-                    header('Location: http://nemanaziv.com/index.php');
-                }
-            }
-        ?>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
