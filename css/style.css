@@ -24,10 +24,33 @@ body{
     border-radius: 3px;
 }
 
-.carousel{
+.najpoznatije .carousel{
     width: 300px;
 }
 
 .sekcija1{
     margin-top: 50px;
+}
+
+.interesovanja{
+    background-image: url('../images/site/background.jpg');
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    font-family: "segoeuil";
+}
+
+.interesovanja h2{
+    font-size: 48px;
+}
+
+.margin-left{
+    margin-left: 40px;
+}
+
+.poravnanje{
+    text-align: center;
 }
