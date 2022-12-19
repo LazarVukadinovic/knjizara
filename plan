@@ -6,8 +6,8 @@ login, sign in
 
 3 vrste naloga
 -kupac
--kreator
--administrator
+-kreator (ubacuje knjige)?
+-administrator (pravi nalog kreatoru)?
 
 Da bi postao kreator moras da imas verifikovan profil
 Verifikacija preko kod putem emaila

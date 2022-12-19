@@ -1,0 +1,33 @@
+.hero{
+    background-image: url('../images/site/hero.jpg');
+    background-repeat: no-repeat;
+    height: calc(100vh - 56px);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-header{
+    margin-top: 100px;
+    text-transform: uppercase;
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 68px;
+}
+
+body{
+    background-color: #ebe6ec;
+}
+
+.slider-image img{
+    height: 350px;
+    width: 300px;
+    border-radius: 3px;
+}
+
+.carousel{
+    width: 300px;
+}
+
+.sekcija1{
+    margin-top: 50px;
+}
